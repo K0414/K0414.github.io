@@ -9,8 +9,8 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Jekyll Bootstrap
-tagline: Site Tagline
+title : {K0414}
+tagline:
 author :
   name : K0414
   email : liufc10@gmail.com
@@ -83,7 +83,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : jekyllbootstrap
+      short_name : k0414
     livefyre :
       site_id : 123
     intensedebate :
@@ -101,7 +101,7 @@ JB :
   analytics :
     provider : google 
     google : 
-        tracking_id : 'UA-123-12'
+        tracking_id : 'UA-29696916-1'
     getclicky :
       site_id : 
     mixpanel :
