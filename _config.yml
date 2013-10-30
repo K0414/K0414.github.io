@@ -2,7 +2,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://K0414.github.io
+url: http://www.xpcode.net
 title: My Octopress Blog
 subtitle: A blogging framework for hackers.
 author: Your Name
@@ -90,7 +90,7 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
+disqus_short_name: k0414
 disqus_show_comment_count: false
 
 # Google Analytics
