@@ -1,15 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://www.xpcode.net/blog/archives/</loc>
-        <lastmod>2013-10-30T12:49:31+08:00</lastmod>
+        <loc>http://www.xpcode.net/blog/2013/10/29/just-test/</loc>
+        <lastmod>2013-10-29T23:56:35+08:00</lastmod>
     </url>
     <url>
-        <loc>http://www.xpcode.net/</loc>
-        <lastmod>2013-10-30T12:49:31+08:00</lastmod>
+        <loc>http://www.xpcode.net/blog/archives/</loc>
+        <lastmod>2013-10-29T23:56:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.xpcode.net/robots.txt</loc>
-        <lastmod>2013-10-30T12:49:31+08:00</lastmod>
+        <lastmod>2013-10-29T23:25:00+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.xpcode.net/</loc>
+        <lastmod>2013-10-29T23:56:35+08:00</lastmod>
     </url>
 </urlset>
