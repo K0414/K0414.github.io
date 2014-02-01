@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://www.xpcode.net/blog/2014/01/30/toposort-and-its-application/</loc>
+        <lastmod>2014-02-01T18:00:27+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.xpcode.net/robots.txt</loc>
+        <lastmod>2014-02-01T18:00:27+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.xpcode.net/</loc>
+        <lastmod>2014-02-01T18:00:27+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.xpcode.net/blog/archives/</loc>
+        <lastmod>2014-02-01T18:00:27+08:00</lastmod>
+    </url>
+</urlset>
