@@ -9,7 +9,7 @@
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="拓扑排序及其应用 概念介绍 在生活中，我们做每件事情都是有一定步骤的，比如洗衣服要经过放衣服-&gt;加水-&gt;洗涤-&gt;脱水几个步骤，做蛋炒饭要打鸡蛋-&gt;炒鸡蛋-&gt;炒米饭。每个步骤的开始依赖于前一步骤的完成，顺序是不能乱的。 对于一件事情先做哪步后做哪步一目了然， &hellip;">
+  <meta name="description" content="概念介绍 在生活中，我们做每件事情都是有一定步骤的，比如洗衣服要经过放衣服-&gt;加水-&gt;洗涤-&gt;脱水几个步骤，做蛋炒饭要打鸡蛋-&gt;炒鸡蛋-&gt;炒米饭。每个步骤的开始依赖于前一步骤的完成，顺序是不能乱的。 对于一件事情先做哪步后做哪步一目了然，可是如果告诉你： 把衣服泡上、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,9 +91,7 @@
   </header>
 
 
-<div class="entry-content"><h1>拓扑排序及其应用</h1>
-
-<h2>概念介绍</h2>
+<div class="entry-content"><h2>概念介绍</h2>
 
 <p>在生活中，我们做每件事情都是有一定步骤的，比如洗衣服要经过<code>放衣服-&gt;加水-&gt;洗涤-&gt;脱水</code>几个步骤，做蛋炒饭要<code>打鸡蛋-&gt;炒鸡蛋-&gt;炒米饭</code>。每个步骤的开始依赖于前一步骤的完成，顺序是不能乱的。</p>
 
@@ -249,9 +247,11 @@ bool toposort_dfs()
 <p>NOIP2013P4.车站分级</p>
 
 <blockquote><p>一条单向的铁路线上，依次有编号为1, 2, …, n的n个火车站。每个火车站都有一个级别，最低为1级。现有若干趟车次在这条线路上行驶，每一趟都满足如下要求：如果这趟车次停靠了火车站x，则始发站、终点站之间所有级别大于等于火车站x的都必须停靠。（注意：起始站和终点站自然也算作事先已知需要停靠的站点）
-例如，下表是5趟车次的运行情况。其中，前4趟车次均满足要求，而第5趟车次由于停靠了3号火车站（2级）却未停靠途经的6号火车站（亦为2级）而不满足要求。
-<img src="https://lh3.googleusercontent.com/nV-iq3qxZ2N5rl3bfNT-HFdbf_xLBfjkTU9zfgCuXi0=s550" title="车站分级" alt="enter image description here" />
-现有m趟车次的运行情况（全部满足要求），试推算这n个火车站至少分为几个不同的级别。</p></blockquote>
+例如，下表是5趟车次的运行情况。其中，前4趟车次均满足要求，而第5趟车次由于停靠了3号火车站（2级）却未停靠途经的6号火车站（亦为2级）而不满足要求。</p></blockquote>
+
+<p><img src="https://lh3.googleusercontent.com/nV-iq3qxZ2N5rl3bfNT-HFdbf_xLBfjkTU9zfgCuXi0=s550" title="车站分级" alt="enter image description here" /></p>
+
+<p>现有m趟车次的运行情况（全部满足要求），试推算这n个火车站至少分为几个不同的级别。</p>
 
 <p>输入：</p>
 
@@ -287,12 +287,16 @@ bool toposort_dfs()
 
 <p>思路：</p>
 
-<blockquote><p>在介绍拓扑排序的时候，我们是以任务的依赖关系为例讲解的，实际上依赖关系也可以抽象为优先级关系，先做的任务优先级高，后做的任务优先级低。对于题目中的每一趟列车，其经过的车站可以分为两个优先级，高级的要停靠，低级的不停靠。每趟列车相当于给出一组高低优先级的约束，比如一辆车的停靠站点是<code>1、3、5</code>，那么<code>1、3、5</code>属于高级站点，<code>2、4</code>属于低级站点；另外一辆车停靠<code>1、3、6</code>，那么<code>1、3、6</code>属于高级站点，<code>2、4、5</code>属于低级站点，其中站点<code>5</code>既在前车的高级站点里又在后车的低级站点里，那么说明两个分级是不够的，需要再增加一个分级才能满足要求。对于每辆车的约束，我们可以用一个DAG图表示。比如上面的两个约束可以分别表示为下图：
-<img src="https://lh4.googleusercontent.com/-WuTaT998gts/Uuy-dxFgU0I/AAAAAAAAAIU/owTgnm98T3w/s0/1.png" title="1.png" alt="enter image description here" />
-将两个约束合并可以得到一个新的DAG：
-<img src="https://lh5.googleusercontent.com/-nzjW-qLq0C8/Uuy--M8Qc1I/AAAAAAAAAIg/oKPNQgX5SvE/s0/2.png" title="2.png" alt="enter image description here" />
-而站点分级的数目就等于从入度为0的节点（可能有多个）到出度为0的节点（可能有多个）的所有路径中最长（经过节点最多）的那条的节点数目。
-因此，我们可以使用拓扑排序解决这个问题。可以在贪心版本的基础上稍加修改得到最终的算法。这个任务就交给你啦，写好后可以在下面的网址提交代码来在线验证程序的正确性。</p></blockquote>
+<blockquote><p>在介绍拓扑排序的时候，我们是以任务的依赖关系为例讲解的，实际上依赖关系也可以抽象为优先级关系，先做的任务优先级高，后做的任务优先级低。对于题目中的每一趟列车，其经过的车站可以分为两个优先级，高级的要停靠，低级的不停靠。每趟列车相当于给出一组高低优先级的约束，比如一辆车的停靠站点是<code>1、3、5</code>，那么<code>1、3、5</code>属于高级站点，<code>2、4</code>属于低级站点；另外一辆车停靠<code>1、3、6</code>，那么<code>1、3、6</code>属于高级站点，<code>2、4、5</code>属于低级站点，其中站点<code>5</code>既在前车的高级站点里又在后车的低级站点里，那么说明两个分级是不够的，需要再增加一个分级才能满足要求。对于每辆车的约束，我们可以用一个DAG图表示。比如上面的两个约束可以分别表示为下图：</p></blockquote>
+
+<p><img src="https://lh4.googleusercontent.com/-WuTaT998gts/Uuy-dxFgU0I/AAAAAAAAAIU/owTgnm98T3w/s0/1.png" title="1.png" alt="enter image description here" /></p>
+
+<p>将两个约束合并可以得到一个新的DAG：</p>
+
+<p><img src="https://lh5.googleusercontent.com/-nzjW-qLq0C8/Uuy--M8Qc1I/AAAAAAAAAIg/oKPNQgX5SvE/s0/2.png" title="2.png" alt="enter image description here" /></p>
+
+<p>而站点分级的数目就等于从入度为0的节点（可能有多个）到出度为0的节点（可能有多个）的所有路径中最长（经过节点最多）的那条的节点数目。
+因此，我们可以使用拓扑排序解决这个问题。可以在贪心版本的基础上稍加修改得到最终的算法。这个任务就交给你啦，写好后可以在下面的网址提交代码来在线验证程序的正确性。</p>
 
 <p><a href="http://oj.luogu.org:8888/problemshow?pid=1983">在线测试</a>.</p>
 
