@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://www.xpcode.net/atom.xml" rel="self"/>
   <link href="http://www.xpcode.net/"/>
-  <updated>2014-02-01T18:36:44+08:00</updated>
+  <updated>2014-02-01T18:39:15+08:00</updated>
   <id>http://www.xpcode.net/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -32,6 +32,9 @@
 <p>拓扑排序就是用来解决这个问题的。我们给每个任务一个编号，如果一个任务依赖于另一个任务，我们就用一个箭头从前面的任务指向后面的任务，比如图中的<code>7-&gt;11</code>的箭头说明要做<code>11</code>这件事必须先把<code>7</code>完成了。这样我们就得到一个有向无环图（directed acyclic graph，DAG），我们可以根据这个图来确定完成任务的顺序。</p>
 
 <blockquote><p>无环是因为我们无法对相互依赖的任务给出一个完成顺序，就像我们不知道先有鸡还是先有蛋一样</p></blockquote>
+
+<!--more-->
+
 
 <p><img src="https://lh5.googleusercontent.com/-UbpA_iTD2mk/Uuopjzy3_VI/AAAAAAAAAHs/hddLajfvSmM/s0/180px-Directed_acyclic_graph.png" title="有向无环图" alt="有向无环图" /></p>
 
