@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ivan's Matrix</title>
+  <title>Blog Archive - Ivan's Matrix</title>
   <meta name="author" content="Ivan">
 
   
-  <meta name="description" content="概念介绍 在生活中，我们做每件事情都是有一定步骤的，比如洗衣服要经过放衣服-&gt;加水-&gt;洗涤-&gt;脱水几个步骤，做蛋炒饭要打鸡蛋-&gt;炒鸡蛋-&gt;炒米饭。每个步骤的开始依赖于前一步骤的完成，顺序是不能乱的。 对于一件事情先做哪步后做哪步一目了然，可是如果告诉你： 把衣服泡上、 &hellip;">
+  <meta name="description" content="Blog Archive 2014 拓扑排序及其应用
+Jan 30 2014 Recent Posts 拓扑排序及其应用 GitHub Repos Status updating... @K0414 on GitHub $(document).ready(function(){ if (! &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.xpcode.net">
+  <link rel="canonical" href="http://www.xpcode.net/blog/archives">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Ivan's Matrix" type="application/atom+xml">
@@ -73,69 +74,36 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article role="article">
   
-  
-  
-    <article>
-      
   <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/30/toposort-and-its-application/">拓扑排序及其应用</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-30T17:13:00+08:00" pubdate data-updated="true">Jan 30<span>th</span>, 2014</time>
-        
-      </p>
+    <h1 class="entry-title">Blog Archive</h1>
     
   </header>
+  
+  <div id="blog-archives">
 
 
-  <div class="entry-content"><h2>概念介绍</h2>
 
-<p>在生活中，我们做每件事情都是有一定步骤的，比如洗衣服要经过<code>放衣服-&gt;加水-&gt;洗涤-&gt;脱水</code>几个步骤，做蛋炒饭要<code>打鸡蛋-&gt;炒鸡蛋-&gt;炒米饭</code>。每个步骤的开始依赖于前一步骤的完成，顺序是不能乱的。</p>
+  
+  <h2>2014</h2>
 
-<p>对于一件事情先做哪步后做哪步一目了然，可是如果告诉你：</p>
+<article>
+  
+<h1><a href="/blog/2014/01/30/toposort-and-its-application/">拓扑排序及其应用</a></h1>
+<time datetime="2014-01-30T17:13:00+08:00" pubdate><span class='month'>Jan</span> <span class='day'>30</span> <span class='year'>2014</span></time>
 
-<blockquote><p>把衣服泡上、写篇读书笔记、把衣服洗了、学个算法、把文章读了、作业让家长检查、
-做个算法练习题、把作业写完……`</p></blockquote>
 
-<p>恐怕先做哪个后做哪个还得好好琢磨一下吧。</p>
-
-<p>拓扑排序就是用来解决这个问题的。我们给每个任务一个编号，如果一个任务依赖于另一个任务，我们就用一个箭头从前面的任务指向后面的任务，比如图中的<code>7-&gt;11</code>的箭头说明要做<code>11</code>这件事必须先把<code>7</code>完成了。这样我们就得到一个有向无环图（directed acyclic graph，DAG），我们可以根据这个图来确定完成任务的顺序。</p>
-
-<blockquote><p>无环是因为我们无法对相互依赖的任务给出一个完成顺序，就像我们不知道先有鸡还是先有蛋一样</p></blockquote>
+</article>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/01/30/toposort-and-its-application/">Read on &rarr;</a>
-    </footer>
-  
 
-
-    </article>
   
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+</article>
+
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -152,7 +120,7 @@
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/K0414">@K0414</a> on GitHub
@@ -184,6 +152,7 @@
 
   
 </aside>
+
 
     </div>
   </div>
